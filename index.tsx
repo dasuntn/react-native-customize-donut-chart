@@ -35,18 +35,20 @@ const DEFAULT_COLORS = [
 type DataType = { value: number };
 type DonutChartProps = {
   data: DataType[];
-  SliceColors: string[];
-  centerCircle: { isEnable: boolean; color: string };
-  percentageTextStyle: { color: string };
+  size?: number;
+  SliceColors?: string[];
+  centerCircle?: { isEnable: boolean; color: string };
+  percentageTextStyle?: { color: string };
 };
 const DonutChart = ({
   data,
+  size,
   SliceColors = DEFAULT_COLORS,
   centerCircle = { isEnable: true, color: "#F5F5F5" },
   percentageTextStyle = { color: "#000000" },
 }: DonutChartProps) => {
-  const { width } = useWindowDimensions();
-
+  const { width: deviceWidth } = useWindowDimensions();
+  const width = size ?? deviceWidth;
   const radius = width / 4 + 32;
   const canvasHeight = width / 2 + HEIGHT_BUFFER;
 
