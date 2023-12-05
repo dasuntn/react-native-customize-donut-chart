@@ -2,7 +2,7 @@ react-native-customize-donut-chart
 
 The simple customizable donut chart component for the React Native app supports both iOS and Android.
 
-<img src="https://raw.githubusercontent.com/dasuntn/react-native-customize-donut-chart/master/exampleImage1.png" width="400" />
+<img width="250" alt="Screenshot 2023-12-04 at 15 41 03" src="https://github.com/dasuntn/react-native-customize-donut-chart/assets/15120571/e0785d24-ab9a-463e-bd02-44757314d8b2">
 
 <img src="https://raw.githubusercontent.com/dasuntn/react-native-customize-donut-chart/master/exampleImage2.png" width="400" />
 
