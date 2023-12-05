@@ -1,4 +1,4 @@
-react-native-customize-donut-chart
+# react-native-customize-donut-chart
 
 The simple customizable donut chart component for the React Native app supports both iOS and Android.
 
