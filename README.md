@@ -6,6 +6,9 @@ The simple customizable donut chart component for the React Native app supports 
 
 <img width="250" alt="Screenshot 2023-12-04 at 15 40 52" src="https://github.com/dasuntn/react-native-customize-donut-chart/assets/15120571/b24d999c-6a00-452b-9916-79abbef70b21">
 
+
+https://github.com/dasuntn/react-native-customize-donut-chart/assets/15120571/31ad57cd-64ee-4573-81a9-45a2153d4cb5
+
 ## Features
 
 - Cross platform
