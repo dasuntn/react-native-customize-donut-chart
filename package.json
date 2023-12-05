@@ -10,6 +10,12 @@
     "type": "git",
     "url": "https://github.com/dasuntn/react-native-customize-donut-chart"
   },
+  "keywords": [
+    "react",
+    "react native",
+    "donut graph",
+    "d3"
+  ],
   "author": "Tharindu Dasun Nanayakkara",
   "license": "ISC",
   "peerDependencies": {
