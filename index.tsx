@@ -1,5 +1,4 @@
 import { arc, DefaultArcObject, pie } from "d3-shape";
-import * as Haptics from "expo-haptics";
 import React, { useMemo, useState } from "react";
 import { Pressable, useWindowDimensions, View } from "react-native";
 import Svg, { G, Path, Text as SvgText } from "react-native-svg";
@@ -36,6 +35,7 @@ type DataType = { value: number };
 type DonutChartProps = {
   data: DataType[];
   size?: number;
+  onSlicePress?: () => void;
   SliceColors?: string[];
   centerCircle?: { isEnable: boolean; color: string };
   percentageTextStyle?: { color: string };
@@ -43,6 +43,7 @@ type DonutChartProps = {
 const DonutChart = ({
   data,
   size,
+  onSlicePress,
   SliceColors = DEFAULT_COLORS,
   centerCircle = { isEnable: true, color: "#F5F5F5" },
   percentageTextStyle = { color: "#000000" },
@@ -64,11 +65,11 @@ const DonutChart = ({
     return acc + prev.value;
   }, 0);
 
-  const OnSlicePress = (index: number, isHepticsEnabled: boolean = false) => {
-    if (isHepticsEnabled) {
-      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
-    }
+  const OnSlicePress = (index: number) => {
     setSelectedIndex(index);
+    if (onSlicePress) {
+      onSlicePress();
+    }
   };
 
   return (
@@ -118,8 +119,7 @@ const DonutChart = ({
                   key={index}
                   x={canvasHeight / 2}
                   y={canvasHeight / 2}
-                  onPress={() => OnSlicePress(index)}
-                  onPressIn={() => OnSlicePress(index, true)}
+                  onPressIn={() => OnSlicePress(index)}
                 >
                   <Slice
                     color={SliceColors[index]}
@@ -134,8 +134,6 @@ const DonutChart = ({
                       y={percentageLabelArcPoint[1]}
                       textAnchor={textAnchor}
                       opacity={percentageOpacity}
-                      onPress={() => OnSlicePress(index)}
-                      onPressIn={() => OnSlicePress(index, true)}
                     >
                       {`${((100 * value) / total).toFixed(0)}%`}
                     </SvgText>

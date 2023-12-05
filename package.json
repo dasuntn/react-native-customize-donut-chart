@@ -31,7 +31,6 @@
     "typescript": "^5.3.2"
   },
   "dependencies": {
-    "d3-shape": "^3.2.0",
-    "expo-haptics": "12.6.0"
+    "d3-shape": "^3.2.0"
   }
 }

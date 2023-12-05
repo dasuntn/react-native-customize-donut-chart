@@ -62,3 +62,4 @@ export default ChartComponent;
 |   sliceColors    |  string[] |  no |
 |   centerCircle    |  { isEnable: boolean; color: string } |  no |
 |   percentageTextStyle    |  { color: string } |  no |
+| onSlicePress | function | no | 
